@@ -80,6 +80,7 @@ type TranslationSet struct {
 	StopAllContainers          string
 	RemoveAllContainers        string
 	ViewRestartOptions         string
+	ExecShell                  string
 	RunCustomCommand           string
 	ViewBulkCommands           string
 

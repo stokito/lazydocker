@@ -509,6 +509,14 @@ func (gui *Gui) handleContainerViewLogs(g *gocui.Gui, v *gocui.View) error {
 	return gui.Errors.ErrSubProcess
 }
 
+func (gui *Gui) handleContainersExecShell(g *gocui.Gui, v *gocui.View) error {
+	if err := gui.OSCommand.RunCommand("bash"); err != nil {
+		return gui.createErrorPanel(gui.g, err.Error())
+	}
+
+	return nil
+}
+
 func (gui *Gui) handleContainersCustomCommand(g *gocui.Gui, v *gocui.View) error {
 	container, err := gui.getSelectedContainer()
 	if err != nil {
